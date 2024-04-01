@@ -1,5 +1,8 @@
-# rlctf_arena - This is a deliberately vulnerable web application with limited security measures taken. Do not run in a production environment
-Reinforcement Learning Training for CTF. 
+# rlctf_arena - Dynamic environment generation for training RL agents
+This is a deliberately vulnerable web application with limited security measures taken. Do not run in a production environment
+
+Its purpose is to act as a real world vulnerable application that generates vulnerable SQL queries for training reinforcement learning agents.
+This code is only the backend environment, not the OpenAI Gym middleware.
 
 To initialise: 
 1. Configure environment choices in env.yml file
