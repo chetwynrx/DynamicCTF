@@ -1,0 +1,4 @@
+echo " <br/> <b>paymentDate</b>" . $row['paymentDate'] . " " ; #field-to-replace#form-to-replace
+echo " <br/> <b>amount</b>" . $row['amount'] . " " ; #field-to-replace
+echo " <br/> <b>checkNumber</b>" . $row['checkNumber'] . " " ; #field-to-replace
+echo " <br/> <b>customerNumber</b>" . $row['customerNumber'] . " " ; #field-to-replace

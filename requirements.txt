@@ -1,0 +1,5 @@
+pyyaml
+requests
+pypika
+mysqlclient
+Faker

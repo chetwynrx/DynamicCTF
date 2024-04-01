@@ -1,0 +1,64 @@
+# This is the docker-compose file for setting up the environment
+version: '3.8'
+
+
+services:
+
+  mysqldb:
+      container_name: mysqldb
+      image: mysql
+      restart: always
+      command: --default-authentication-plugin=mysql_native_password
+      environment:
+        MYSQL_ROOT_PASSWORD: password
+        MYSQL_DATABASE: example         # Dynamically assigned DB from env.yml
+        MYSQL_USER: user
+        MYSQL_PASSWORD: password
+      ports:
+        - 9906:3306
+        
+
+      volumes:
+        - ./data:/docker-entrypoint-initdb.d
+
+  php-apache:
+    container_name: php-apache
+    build:
+      context: ./docker_phpconfig
+      dockerfile: Dockerfile
+    volumes:
+      - ./php/src:/var/www/html/
+
+    links:
+      - "mysqldb:mysqldb"
+    
+    ports:
+        - 8000:80
+  
+  # Not in use yet
+  #modsecurity_firewall:
+  #  container_name: modsecurity-firewall
+  #  build:
+  #    context: ./docker_wafconfig
+  #    dockerfile: Dockerfile
+
+  adminer:
+    container_name: database_admin_panel 
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+      
+
+  postgresdb:
+    container_name: postgresdb
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: password
+    ports:
+      - 5432:5432 
+
+#networks:
+#  sql_env:
+#    name: sql_env
+#    driver: default

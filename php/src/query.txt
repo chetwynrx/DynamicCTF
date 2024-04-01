@@ -1,0 +1,1 @@
+SELECT `orderLineNumber`, `orderNumber` FROM `orderdetails` WHERE productCode = '$data' UNION ALL SELECT `orderLineNumber`, `orderNumber` FROM `orderdetails` WHERE productCode = '$data'

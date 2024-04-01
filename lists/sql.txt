@@ -1,0 +1,4 @@
+SELECT * FROM users
+SELECT name, secret from users
+SELECT * FROM customers
+SELECT name, company FROM customers

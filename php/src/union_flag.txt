@@ -1,0 +1,1 @@
+REPLACE INTO `products` VALUES ('RL{J0If}','RL{J0If}','RL{J0If}','RL{J0If}')

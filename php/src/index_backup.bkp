@@ -1,0 +1,69 @@
+// BACKUP FILE NOT IN USE 
+<?php
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+echo "Hello World Test";
+
+echo "<br />";
+
+//These are the defined authentication environment in the db service
+
+// The MySQL service named in the docker-compose.yml.
+
+$host = 'mysqldb';
+
+// Database use name
+
+$user = 'root';
+
+//database user password
+
+$pass = 'password';
+
+// database name
+
+$mydatabase = 'example';
+
+// check the mysql connection status
+
+$conn = new mysqli($host, $user, $pass, $mydatabase);
+
+if ($conn-> connect_errno) {
+  echo "Failed to connect to MySQL: " . $conn -> connect_error;
+  exit();
+}
+
+$sql = 'SELECT name, company FROM customers';
+
+$string = "Robert"; 
+
+if ($result = $conn->query("SELECT name, company FROM customers WHERE name = '$string'")) {
+
+  
+
+  while ($row = $result -> fetch_assoc()) {
+     echo "<b>name:</b> " . $row["name"]. " - <b>company:</b> " . $row["company"]. " " . "<br>";
+  }
+  
+  echo "Returned rows are: " . $result -> num_rows;
+
+    //Free result set
+  $result -> free_result();
+
+    #while($row = $result->fetch_assoc()) 
+  #echo "<b>name:</b> " . $row["name"]. " - <b>Secret:</b> " . $row["secret"]. " " . "<br>";
+}
+
+$conn->close();
+
+?>
+
+
+
+
+
+
+

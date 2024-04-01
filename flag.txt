@@ -1,0 +1,1 @@
+REPLACE INTO `payments` VALUES (101,'RL{CRx3}','2022-01-01',4)

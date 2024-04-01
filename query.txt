@@ -1,0 +1,1 @@
+SELECT `checkNumber`, `customerNumber` FROM `payments` WHERE checkNumber = '$data'

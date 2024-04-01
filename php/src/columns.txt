@@ -1,0 +1,3 @@
+echo " <br/> <b>priceEach</b>" . $row['priceEach'] . " " ; #field-to-replace#form-to-replace
+echo " <br/> <b>orderLineNumber</b>" . $row['orderLineNumber'] . " " ; #field-to-replace
+echo " <br/> <b>orderNumber</b>" . $row['orderNumber'] . " " ; #field-to-replace

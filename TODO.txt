@@ -1,0 +1,5 @@
+Dynamic Assignment of SQL Database: env.yml -> docker-compose -> sql_gen.py & index.php & index.tmp
+Session Management - Only relevant if we want to run multiple clients on a single environment
+Advanced security - Once we have formalised the environment for the RL agents with the simple vulnerable queries we can begin implement security controls
+
+Housekeeping on the repo - bit of a mess right now :(
