@@ -20,5 +20,5 @@ Limitations:
 2. Disables foreign key assertions so that flags can be randomly inserted into the chosen database
 2. Single client only - Each agent requires session management or a new environment when requesting new episode - Will look into best solution
 3. HTML pages are not dynamic so the agent will always interact with the same HTML form input regardless of challenge type
-4. Currently focused only on SQL challenges. Will look into the development of XSS and other web application themed CTF challenges
+4. Primarily focused only on SQL challenges. Will look into the development of XSS and other web application themed CTF challenges - A couple of test XSS sites are available
 
