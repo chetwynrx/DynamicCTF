@@ -13,7 +13,7 @@ http://(localhost)|(ipaddress)/new_episode.php
 
 Proposed topology: WAF not implemented
 
-![alt text](https://github.com/chetwynrx/rlctf_arena/blob/main/env_topology_diagram.png)
+![alt text](https://github.com/chetwynrx/DynamicCTF/blob/main/env_topology_diagram.png)
 
 Limitations:
 1. Inserting flag row data into the database will replace any duplicate row entries in the original database
