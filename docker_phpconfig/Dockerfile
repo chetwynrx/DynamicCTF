@@ -17,7 +17,7 @@ run pip3 install mysql-connector-python
 
 COPY ./sql_gen.py /etc/test.py
 COPY ./classicmodels.sql /var/www/html
-COPY ./example.sql /var/www/html
+#COPY ./example.sql /var/www/html
 RUN chmod 777 -R /var/www/html
 #RUN chown 777 -R www-data:www-data /etc/test.py
 RUN chmod +x /etc/test.py
