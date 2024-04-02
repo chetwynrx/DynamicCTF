@@ -407,7 +407,7 @@ insert  into `offices`(`officeCode`,`city`,`phone`,`addressLine1`,`addressLine2`
 
 /*Table structure for table `orderdetails` */
 
-/*DROP TABLE IF EXISTS `orderdetails`;
+DROP TABLE IF EXISTS `orderdetails`;
 
 CREATE TABLE `orderdetails` (
   `orderNumber` int(11) NOT NULL,
@@ -423,7 +423,7 @@ CREATE TABLE `orderdetails` (
 
 /*Data for the table `orderdetails` */
 
-/*insert  into `orderdetails`(`orderNumber`,`productCode`,`quantityOrdered`,`priceEach`,`orderLineNumber`) values 
+insert  into `orderdetails`(`orderNumber`,`productCode`,`quantityOrdered`,`priceEach`,`orderLineNumber`) values 
 
 (10100,'S18_1749',30,'136.00',3),
 
