@@ -36,7 +36,7 @@ def launch ():
     print("Starting")
     #os.system('cmd /k docker-compose up')
     #subprocess.call ('docker network create -d bridge --subnet 10.0.0.0/24 sql_network', cwd=os.getcwd())
-    subprocess.call ('docker-compose up', shell="True", cwd=os.getcwd())
+    subprocess.call ('docker compose up', shell="True", cwd=os.getcwd())
     #os.sleep(10)
     #subprocess.call ('docker network connect sql_network mysqldb', cwd=os.getcwd())
     #subprocess.call ('docker network connect sql_network php-apache', cwd=os.getcwd())

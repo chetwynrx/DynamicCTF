@@ -13,7 +13,7 @@ RUN pip3 install requests
 RUN pip3 install pypika 
 RUN pip3 install mysqlclient
 RUN pip3 install Faker
-run pip3 install mysql-connector-python
+RUN pip3 install mysql-connector-python
 
 COPY ./sql_gen.py /etc/test.py
 COPY ./classicmodels.sql /var/www/html
