@@ -4,4 +4,5 @@ pypika
 mysqlclient
 Faker
 mysql-connector-python
-
+libmysqlclient-dev
+pkg-config
