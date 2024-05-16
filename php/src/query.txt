@@ -1,1 +1,1 @@
-SELECT `orderLineNumber`, `orderNumber` FROM `orderdetails` WHERE productCode = '$data' UNION ALL SELECT `orderLineNumber`, `orderNumber` FROM `orderdetails` WHERE productCode = '$data'
+SELECT `productCode`, `buyPrice`, `quantityInStock`, `productName` FROM `products` WHERE productLine = '$data' UNION ALL SELECT `productCode`, `buyPrice`, `quantityInStock`, `productName` FROM `products` WHERE productLine = '$data'

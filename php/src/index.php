@@ -57,15 +57,19 @@ $data = preg_replace("!§!", "",$data); # comment filter
 
 
 
-if ($result = $conn->query(" SELECT `orderLineNumber`, `orderNumber` FROM `orderdetails` WHERE productCode = '$data' UNION ALL SELECT `orderLineNumber`, `orderNumber` FROM `orderdetails` WHERE productCode = '$data'")) {#dynamic_query    
+if ($result = $conn->query(" SELECT `productCode`, `buyPrice`, `quantityInStock`, `productName` FROM `products` WHERE productLine = '$data' UNION ALL SELECT `productCode`, `buyPrice`, `quantityInStock`, `productName` FROM `products` WHERE productLine = '$data'")) {#dynamic_query    
     while($row = mysqli_fetch_array($result))
 
     {
 
     
-echo " <br/> <b>priceEach</b>" . $row['priceEach'] . " " ; #field-to-replace#form-to-replace
-echo " <br/> <b>orderLineNumber</b>" . $row['orderLineNumber'] . " " ; #field-to-replace
-echo " <br/> <b>orderNumber</b>" . $row['orderNumber'] . " " ; #field-to-replace
+echo " <br/> <b>buyPrice</b>" . $row['buyPrice'] . " " ; #field-to-replace#form-to-replace
+echo " <br/> <b>productCode</b>" . $row['productCode'] . " " ; #field-to-replace
+echo " <br/> <b>quantityInStock</b>" . $row['quantityInStock'] . " " ; #field-to-replace
+echo " <br/> <b>productScale</b>" . $row['productScale'] . " " ; #field-to-replace
+echo " <br/> <b>productDescription</b>" . $row['productDescription'] . " " ; #field-to-replace
+echo " <br/> <b>productName</b>" . $row['productName'] . " " ; #field-to-replace
+echo " <br/> <b>MSRP</b>" . $row['MSRP'] . " " ; #field-to-replace
   
   
   

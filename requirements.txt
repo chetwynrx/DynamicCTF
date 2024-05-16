@@ -1,8 +1,8 @@
 pyyaml
 requests
 pypika
+pkg-config
 mysqlclient
+libmysqlclient-dev 
 Faker
 mysql-connector-python
-libmysqlclient-dev
-pkg-config

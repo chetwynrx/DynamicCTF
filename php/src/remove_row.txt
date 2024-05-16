@@ -1,1 +1,1 @@
-DELETE FROM orderdetails WHERE productCode = "RL{ZxKE}" LIMIT 1;
+DELETE FROM products WHERE productLine = "RL{6nn0}" LIMIT 1;

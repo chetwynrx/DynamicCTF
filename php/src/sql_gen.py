@@ -900,11 +900,39 @@ def gen_UnionQuery2(): #### Columns in same database
    # print("Attempting row insert")
     try:
         cursor.execute("SELECT {} FROM {} ORDER BY RAND() limit 1 ;".format(random_criterion, union_x))
+        
         new_flag_insert = cursor.fetchall()
-        #print("Criteria {} {}".format(random_criterion, union_x))
 
         new_flag_insert = str(new_flag_insert)
         new_flag_insert = str(new_flag_insert.replace("(","").replace(")","").replace(",","")).replace("'","")
+
+
+        INSERT_SETUP = "1 " * len(columns)
+        INSERT_SETUP = ','.join(INSERT_SETUP.split())
+
+        print(len(columns))
+
+        print(union_x, columns)
+
+        print(INSERT_SETUP)
+
+        INSERT_FINAL = cursor.execute('INSERT IGNORE INTO {} VALUES ({}); '.format(union_x, INSERT_SETUP))
+
+
+
+
+        #INSERT_TEST = cursor.fetchall()
+
+
+        #print("Criteria {} {}".format(random_criterion, union_x))
+
+        #INSERT_TEST = str(INSERT_TEST)
+        #INSERT_TEST= str(INSERT_TEST.replace("(","").replace(")","").replace(",","")).replace("'","")
+
+        #print(INSERT_TEST)
+
+        #INSERT_FINAL = cursor.execute('INSERT INTO {} ({}) ;'.format(union_x, INSERT_TEST))
+
 
        # print("NEW_FLAG_INSERT = {}".format(new_flag_insert))
 
@@ -917,14 +945,20 @@ def gen_UnionQuery2(): #### Columns in same database
         #print("NEW FLAG INSERT {}".format(new_insert))
 
         #print("Inserting Flag")
+        
         cursor.execute('UPDATE {} SET {} = "{}" WHERE {} = "{}" LIMIT 1;'.format(union_x, random_criterion, flag, random_criterion, new_flag_insert))
+
+        #cursor.execute('UPDATE {} SET {} = "{}" WHERE {} = "{}" LIMIT 1;'.format(union_x, random_criterion, flag, random_criterion, new_flag_insert))
         #cursor.execute('UPDATE customers SET customerName = "BUGGED" WHERE customerName = "Muscle Machine Inc" ;'.format(union_x, random_criterion, flag1, random_criterion, new_flag_insert))
     
     except Exception as e:
         print(e)
 
     ### This is the updated delete query
-    remove_row_gen_new = 'DELETE FROM {} WHERE {} = "{}" LIMIT 1;'.format(union_x, random_criterion, flag)
+    try:
+        remove_row_gen_new = 'DELETE FROM {} WHERE {} = "{}" LIMIT 1;'.format(union_x, random_criterion, flag)
+    except:
+        print("Error")
 
     remove_row_gen = 'DELETE FROM `{}` WHERE `{}` = {}{}{} LIMIT 1 ;'.format(union_x, remove_row[remove_row_index], '"', flag, '"')
 
